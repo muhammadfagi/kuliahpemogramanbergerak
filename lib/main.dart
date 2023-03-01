@@ -59,13 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _counter++;
       if(_counter>10){
-        _counter = 0;
-      }
-      _text = "Ganjil: ";
-      for(int i=1; i<=_counter; i++){
-        if(i%2 != 0){
-          _text += '$i, ';
-        }
+        _counter = 1;
       }
 
       if(_counter%2 == 0){
@@ -73,12 +67,14 @@ class _MyHomePageState extends State<MyHomePage> {
       } else {
         text = "Ganjil";
       }
-    });
-  }
 
-  void kelipatanTiga(){
+      _text = "Ganjil: ";
+      for(int i=1; i<=_counter; i++){
+        if(i%2 != 0){
+          _text += '$i, ';
+        }
+      }
 
-    setState(() {
       _count++;
       value = "Genap: ";
       // int rubah = int.parse(controller.text);
@@ -89,11 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
           }
         }
       }
-    });
-  }
 
-  void prima(){
-    setState(() {
       _countPrima++;
       int bil;
 
@@ -109,6 +101,21 @@ class _MyHomePageState extends State<MyHomePage> {
           primaValue+= '$i, ';
         }
       }
+
+
+    });
+  }
+
+  void kelipatanTiga(){
+
+    setState(() {
+
+    });
+  }
+
+  void prima(){
+    setState(() {
+
 
     });
   }
@@ -150,22 +157,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 _text, style: Theme.of(context).textTheme.headline4,
               ),
               SizedBox(height: 40),
-              ElevatedButton(
-                onPressed: kelipatanTiga,
-                // },
-                child: const Text('Latihan Genap Kelipatan 3'),
-              ),
               Text(
                 '$_count',
                 style: Theme.of(context).textTheme.headline4,
               ),
               Text(value, style: Theme.of(context).textTheme.headline4),
               SizedBox(height: 40),
-              ElevatedButton(
-                onPressed: prima,
-                // },
-                child: const Text('Tugas Bilangan Prima'),
-              ),
               Text(
                 '$_countPrima',
                 style: Theme.of(context).textTheme.headline4,
